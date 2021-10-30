@@ -1,0 +1,52 @@
+SISTEMAS DE CONTROLE DE VERSÕES:
+
+O que são (e para que servem) sistemas de controle de versões e como eles podem ajudar o nosso fluxo de desenvolvimento?
+
+Nos ajudam a manter um histórico de alterações;
+Nos ajudam a ter controle sobre cada alteração no código;
+Nos ajudam para que uma alteração de determinada pessoa não influencie na alteração realizada por outra;
+Etc.
+
+COMANDOS PARA SEREM APLICADOS NO GIT BASH:
+
+
+cd - Para navegar entre pastas.
+ls - Para verificr quais arquivos estão na pasta.
+Ctrl + L ou clear- Para limpar a tela.
+touch + nome do arquivo - Para criarmos um arquivo.
+
+
+Antes de qualquer interação com o git, precisamos informar quem somos para que ele armazene corretamente os dados do autor de cada uma das alterações no código.
+
+git config --local user.name "Seu nome aqui"
+git config --local user.email "seu@email.aqui"
+
+Como fazemos para o Git passar a enxergar determinada pasta como um repositório e a observar as mudanças em seus arquivos?
+
+O git init inicializa um repositório no diretório em que o comando for executado. A partir deste comando, o Git poderá gerenciar as modificações realizadas nos arquivos.
+
+git init - Para inicializar um repositório Git.
+
+O comando abaixo mostra o estado do nosso repositório, ou seja, quais arquivos foram alterados, ou não:
+
+git status
+
+
+Para monitorarmos um arquivo que nunca foi editado e salvo pelo Git, utilizaremos o comando git add + o nome do arquivo, exemplo git add index.html. Se tivéssemos vários arquivos, não precisaríamos colocar seus nomes um a um, bastando git add . para que todos os arquivos da pasta atual sejam monitorados.
+
+git add nome_do_arquivo - Para monitorarmos um arquivo específico.
+git add . - Para monitorarmos todos os arquivos do diretório.
+
+
+Changes to committed - "mudanças a serem commitadas", ou salvas, enviadas.
+
+O comando git rm + o nome do arquivo, exemplo git rm index.html serve para remover o arquivo e para que o mesmo deixe de ser monitorado.
+
+git rm nome_do_arquivo - Para removermos o arquivo do monitoramento.
+
+
+O comando git commit -m "", serve para passarmos uma mensagem de commit e por isso usamos o parâmetro -m.
+
+git commit -m "Acrescente aqui uma pequena descrição do que foi modificado"
+
+A boa prática pede para colocarmos mensagens descritivas, evitando que fiquem muito grandes.
