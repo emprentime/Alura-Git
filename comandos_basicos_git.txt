@@ -50,3 +50,55 @@ O comando git commit -m "", serve para passarmos uma mensagem de commit e por is
 git commit -m "Acrescente aqui uma pequena descrição do que foi modificado"
 
 A boa prática pede para colocarmos mensagens descritivas, evitando que fiquem muito grandes.
+
+Seguem algumas definições interessantes:
+
+HEAD: Estado atual do nosso código, ou seja, onde o Git os colocou.
+Working tree: Local onde os arquivos realmente estão sendo armazenados e .
+index: Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.
+
+Link: <https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Gravando-Altera%C3%A7%C3%B5es-em-Seu-Reposit%C3%B3rio.
+
+
+
+Para verificarmos o histórico de alterações, cada mensagem de commits feita, o andamento do nosso projeto e etc, o comando a se utilizar é git log, que nos mostrará diversas informações, sendo a primeira delas um hash do commit.
+
+git log
+
+hash do commit = uma identificação única de cada commit, isto é, não existem dois commits com o mesmo hash.
+
+
+Abaixo o  resultado do git log:
+
+$ git log
+
+commit df46b2d2e17a8b1583d732b1430b15bc208ecf39 (HEAD -> master)
+Author: Marcio Roberto Leite da Silva <emprentime@gmail.com>
+Date:   Sat Oct 30 16:48:24 2021 -0300
+
+    Acento adicionado no curso de Integração Contínua
+
+Explicação:
+
+O comando git log nos mostrará diversas informações, sendo a primeira delas um hash do commit, uma identificação única de cada commit, isto é, não existem dois commits com o mesmo hash.
+
+Tendo esse hash, conseguiremos realizar algumas manipulações. A informação seguinte se refere ao branch, ou "ramo" em que o commit se encontra. Neste caso, verificamos que há HEAD e master. Isto quer dizer que HEAD é o local onde nos encontramos, no nosso código, onde acontecem as alterações que fizermos, e que estamos em um ramo denominado master.
+
+Além disso, temos a autoria do commit, e-mail configurado, data de commit, e mensagem.
+
+O comando git config --local serve para configurarmos algo para um projeto específico, ou, para a máquina toda, podemos utilizar o git config --global.
+
+Poderemos visualizar as configurações salvas por meio do comando git config user.name, ou git config user.email.
+
+Alternativas ao git log:
+
+git log --oneline - Nos permite visualizar todos os commits, sendo que cada uma ocupa uma única linha: 
+git log -p - Se quisermos mais informações como as alterações do commit
+
+Existe uma infinidade de formatos que podemos usar como filtros para mostrar nosso histórico, e em git log cheatsheet há vários delas. Como exemplo, testaremos git log --pretty="format:%H", comando que nos traz apenas o hash. O comando git log --pretty="format:%h %s", por sua vez, traz o hash resumido seguido pela mensagem do commit. Assim, podemos gerar o histórico da nossa aplicação em formatos personalizados.
+
+Arquivo .gitignore:
+
+Existe um arquivo especial do Git, chamado .gitignore, e todas as linhas que estiverem nele serão lidas e ignoradas pelo Git. Se temos um arquivo denominado ignorar_este_arquivo que queremos que seja ignorado, por exemplo, basta o incluirmos em .gitignore, digitando ignorar_este_arquivo simplesmente. Da mesma forma, se tivéssemos uma pasta teste, incluiríamos teste/, em uma nova linha.
+
+Porém, antes de conferirmos isto com git status, precisaremos adicioná-los, com git add .gitignore, por exemplo, e git commit -m "Adicionando .gitignore".
