@@ -14,6 +14,8 @@ cd - Para navegar entre pastas.
 ls - Para verificr quais arquivos estão na pasta.
 Ctrl + L ou clear- Para limpar a tela.
 touch + nome do arquivo - Para criarmos um arquivo.
+mkdir + nome da pasta - Para criarmos uma pasta
+cd + nome da pasta - Para acessarmos uma pasta
 
 
 Antes de qualquer interação com o git, precisamos informar quem somos para que ele armazene corretamente os dados do autor de cada uma das alterações no código.
@@ -102,3 +104,18 @@ Arquivo .gitignore:
 Existe um arquivo especial do Git, chamado .gitignore, e todas as linhas que estiverem nele serão lidas e ignoradas pelo Git. Se temos um arquivo denominado ignorar_este_arquivo que queremos que seja ignorado, por exemplo, basta o incluirmos em .gitignore, digitando ignorar_este_arquivo simplesmente. Da mesma forma, se tivéssemos uma pasta teste, incluiríamos teste/, em uma nova linha.
 
 Porém, antes de conferirmos isto com git status, precisaremos adicioná-los, com git add .gitignore, por exemplo, e git commit -m "Adicionando .gitignore".
+
+Quando commitar:
+
+Devemos gerar um commit sempre que a nossa base de código está em um estado do qual gostaríamos de nos lembrar. Nunca devemos ter commits de códigos que não funcionam, mas também não é interessante deixar para commitar apenas no final de uma feature.
+
+Essa pode ser uma discussão sem fim e cada empresa ou equipe pode seguir uma estratégia diferente. Estude sobre o assunto, entenda o que faz mais sentido para você e sua equipe e seja feliz!
+
+O comando abaixo serve para definirmos um repositório Git, onde todos os membros da equipe o acessarão para compartilhar suas mudanças. Com este comando nós criamos um repositório que não terá a working tree, ou seja, não conterá uma cópia dos nossos arquivos. Como o repositório servirá apenas como servidor, para que outros membros da equipe sincronizem seus trabalhos, poupamos espaço de armazenamento desta forma.
+
+git init --bare
+
+git clone - Traz um repositório remoto para o nosso computador, criando um repositório local.
+
+git push [repositorio] master - Para enviarmos as alterações para o repositório remoto
+Desta forma, nós enviamos as alterações em nosso branch master para o repositório remoto. Basta substituir [repositorio] pelo nome que demos ao repositório ao adicioná-lo. Já para trazer os dados que estiverem no repositório remoto, podemos utilizar o git pull [repositorio] master.
