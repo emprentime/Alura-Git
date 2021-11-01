@@ -184,4 +184,6 @@ Agora se já tivéssemos utilizado o comando git commit -m + mensagem de commit,
 
 Devemos copiar o hash juntamente com git revert. Isso fará com que o commit informado seja desfeito, criando outro. Ao ser rodado, portanto, ele irá gerar um commit cuja mensagem pode ser alterada. Ao fazermos git log mais uma vez, teremos dois commits, um com a alteração do nome do curso, e outro com a reversão deste.
 
-git revert + hash.
+git revert + hash
+
+aprendemos a desfazer alterações das quais não vamos precisar mais.
