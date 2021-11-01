@@ -167,3 +167,21 @@ Qual a diferença entre os comandos rebase e merge?
 O merge junta os trabalhos e gera um merge commit. O rebase aplica os commits de outra branch na branch atual.
 
 Com isso, evitamos os commits de merge.
+
+"Ctrl + Z" no git:
+
+Se quiséssemos descartar as alterações que ainda não foram comitadas poderemos chamar git restore seguido do que queremos desfazer.
+
+O git restore, portanto, serve para desfazermos modificações no arquivo. Sendo assim, neste caso é possível executarmos git restore + nome do arquivo 
+
+git restore index.html
+
+Caso já tivéssemos usado o git add, então teríamos que usar o comando git restore --staged + nome do arquivo e depois o comando git restore + nome do arquivo
+git restore --staged index.html
+git restore index.html
+
+Agora se já tivéssemos utilizado o comando git commit -m + mensagem de commit, precisaríamos utilizar o comando git log, para obtermos o hash do commit.
+
+Devemos copiar o hash juntamente com git revert. Isso fará com que o commit informado seja desfeito, criando outro. Ao ser rodado, portanto, ele irá gerar um commit cuja mensagem pode ser alterada. Ao fazermos git log mais uma vez, teremos dois commits, um com a alteração do nome do curso, e outro com a reversão deste.
+
+git revert + hash.
