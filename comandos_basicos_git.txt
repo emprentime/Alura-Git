@@ -119,3 +119,29 @@ git clone - Traz um repositório remoto para o nosso computador, criando um repo
 
 git push [repositorio] master - Para enviarmos as alterações para o repositório remoto
 Desta forma, nós enviamos as alterações em nosso branch master para o repositório remoto. Basta substituir [repositorio] pelo nome que demos ao repositório ao adicioná-lo. Já para trazer os dados que estiverem no repositório remoto, podemos utilizar o git pull [repositorio] master.
+
+GitHub:
+
+Com o GitHub, podemos ter repositórios remotos públicos e privados gratuitos para armazenar e compartilhar o código dos nossos projetos.
+
+
+git remote rename origin local - Para renomear o repositório local da outra pessoa de "origin" para "local";
+
+git push - Para enviar as suas modificações para o seu servidor
+
+git pull - Para baixar as modificações;
+
+O que é um branch?
+
+Uma ramificação no git é um ponteiro para as alterações feitas nos arquivos do projeto. É útil em situações nas quais você deseja adicionar um novo recurso ou corrigir um erro, gerando uma nova ramificação garantindo que o código instável não seja mesclado nos arquivos do projeto principal. Depois de concluir a atualização dos códigos da ramificação, você pode mesclar a ramificação com a principal, geralmente chamada de master (main). https://receitasdecodigo.com.br/devops/git-o-que-e-um-branch
+
+Git branch nome da branch - Cria uma nova branch
+git checkout nome da branch - Para mudarmos de branch
+git checkout -b nome da branch - Cria uma nova branch e já muda para ela
+
+Como podemos fazer o merge da branch titulo para a branch master?
+
+git checkout master e git merge titulo
+
+Desta forma colocaremos o HEAD na branch master, ou seja, faremos com que o nosso código esteja no estado que o deixamos com o último commit na master. Depois, uniremos o trabalho da branch titulo com a branch atual (master).
+
