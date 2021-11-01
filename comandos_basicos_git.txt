@@ -159,3 +159,10 @@ Um bug foi identificado na ramificação principal. Um recurso que estava funcio
 Um desenvolvedor examina o histórico da ramificação principal usando git log. Por causa do "histórico limpo", o desenvolvedor é capaz de analisar rápido o histórico do projeto.
 O desenvolvedor agora não consegue identificar quando o bug foi introduzido usando git log, então, ele executa git bisect.
 Como o histórico do git está limpo, o git bisect tem um conjunto refinado de commits para comparar ao observar a regressão. O desenvolvedor encontra logo o commit que introduziu o bug e consegue agir de acordo. https://www.atlassian.com/br/git/tutorials/rewriting-history/git-rebase
+
+
+Qual a diferença entre os comandos rebase e merge?
+
+O merge junta os trabalhos e gera um merge commit. O rebase aplica os commits de outra branch na branch atual.
+
+Com isso, evitamos os commits de merge.
