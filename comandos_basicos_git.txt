@@ -145,3 +145,17 @@ git checkout master e git merge titulo
 
 Desta forma colocaremos o HEAD na branch master, ou seja, faremos com que o nosso código esteja no estado que o deixamos com o último commit na master. Depois, uniremos o trabalho da branch titulo com a branch atual (master).
 
+O que é o git rebase?
+
+Rebasing é o processo de mover ou combinar uma sequência de commits para um novo commit base. O rebasing é mais útil e melhor visualizado no contexto do fluxo de trabalho de ramificação de recurso. 
+
+A partir da perspectiva de conteúdo, o rebase é o processo de alterar a base da ramificação do commit para outra, fazendo parecer como se você criou a ramificação a partir de um commit diferente. De um jeito intrínseco, o Git realiza isso criando novos commits e aplicando-os à base especificada. É muito importante entender que, mesmo que a ramificação pareça a mesma, ela é composta de commits novos completos.
+
+Uso:
+
+O principal motivo para fazer o rebase é manter um histórico de projeto linear. Por exemplo, considere uma situação em que a ramificação principal progrediu desde que você começou a trabalhar em uma ramificação de recurso. Você quer colocar as atualizações mais recentes da ramificação principal na ramificação de recurso, mas também quer o histórico da ramificação limpo, para que pareça que você esteve trabalhando com a ramificação principal mais recente. Assim você tem o benefício posterior do merge limpo da ramificação de recurso de volta para a ramificação principal. Por que é interessante manter um "histórico limpo"? Os benefícios de ter um histórico limpo ficam tangíveis ao realizar operações do Git para investigar a introdução de uma regressão. Um cenário mais realista seria:
+
+Um bug foi identificado na ramificação principal. Um recurso que estava funcionando bem agora está com falha.
+Um desenvolvedor examina o histórico da ramificação principal usando git log. Por causa do "histórico limpo", o desenvolvedor é capaz de analisar rápido o histórico do projeto.
+O desenvolvedor agora não consegue identificar quando o bug foi introduzido usando git log, então, ele executa git bisect.
+Como o histórico do git está limpo, o git bisect tem um conjunto refinado de commits para comparar ao observar a regressão. O desenvolvedor encontra logo o commit que introduziu o bug e consegue agir de acordo. https://www.atlassian.com/br/git/tutorials/rewriting-history/git-rebase
