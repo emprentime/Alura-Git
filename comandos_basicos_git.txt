@@ -80,6 +80,9 @@ Date:   Sat Oct 30 16:48:24 2021 -0300
 
     Acento adicionado no curso de Integração Contínua
 
+git log -n + quantidade de commits que queremos visualizar
+Ex: git log -n 2 --> Visualizaremos os dois últimos commits
+
 Explicação:
 
 O comando git log nos mostrará diversas informações, sendo a primeira delas um hash do commit, uma identificação única de cada commit, isto é, não existem dois commits com o mesmo hash.
@@ -124,6 +127,7 @@ GitHub:
 
 Com o GitHub, podemos ter repositórios remotos públicos e privados gratuitos para armazenar e compartilhar o código dos nossos projetos.
 
+git remote -v - Para visualizarmos o caminho da aplicação remota
 
 git remote rename origin local - Para renomear o repositório local da outra pessoa de "origin" para "local";
 
@@ -236,3 +240,27 @@ Que o git checkout serve para deixar a cópia do código da nossa aplicação no
 git checkout <branch> deixa o código no estado de uma branch com o nome <branch>;
 
 git checkout <hash> deixa o código no estado do commit com o hash <hash>.
+
+git diff + número do 1 hash + .. + número do 2 hash - Por meio deste comando, visualizamos todas as alterações feitas do primeiro hash informado até o segundo hash, marcadas em cores diferentes.
+
+Ex: git diff df46b2d..84ca725
+
+Além disso, caso estejamos modificando algo, como acresentando um novo curso na listagem, no código, e queiramos verificar o que foi alterado, poderemos simplesmente usar o git diff, que nos mostra o que foi alterado e que ainda não foi adicionado para commit. Mas a partir do momento em que adicionamos o arquivo, este comando não nos mostra mais o que existe de diferente.
+
+Abaixo como o git diff exibe as mudanças no código:
+
++ linha adicionada
+- linha removida
+- linha modificada (versão antiga)
++ linha modificada (nova versão)
+
+O sinal de subtração (-) antes da linha indica que ela não está mais presente no arquivo. Já o sinal de adição (+) mostra que é uma linha nova. Alterações são representadas por uma remoção e uma adição de linha.
+
+
+Para gerarmos um versão do nosso projeto utilizaremos o comando abaixo:
+
+git tag -a v0.1.0 -m "Lançando a primeira versão (BETA) da aplicação de cursos"
+
+No Git, é possível utilizar um conceito denominado tag, capaz de marcar um ponto na aplicação que não pode ser modificado, fixo. Assim, após ser lançada, a versão 0.1 nunca deixará de ser a versão 0.1, e quaisquer alterações que forem feitas nela, serão incluídas na versão posterior.
+
+Isso não quer dizer que faremos um código que não será mais editável, apenas que criaremos um marco para onde poderemos ir, e que terá um código correspondente àquele estado. E para criarmos uma tag, informaremos isto ao Git, com git tag -a, seguido do nome que damos a ela, v0.1.0, que poderia ser qualquer outro. Além disto, poderemos incluir uma mensagem. O comando completo ficaria, então: git tag -a v0.1.0 -m "Lançando a primeira versão (BETA) da aplicação de cursos".
