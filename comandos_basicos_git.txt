@@ -261,6 +261,39 @@ Para gerarmos um versão do nosso projeto utilizaremos o comando abaixo:
 
 git tag -a v0.1.0 -m "Lançando a primeira versão (BETA) da aplicação de cursos"
 
+git push origin + nome da Tag - Para subirmos a versão aa tag criada para o git
+Ex: git push origin v0.1.0
+
 No Git, é possível utilizar um conceito denominado tag, capaz de marcar um ponto na aplicação que não pode ser modificado, fixo. Assim, após ser lançada, a versão 0.1 nunca deixará de ser a versão 0.1, e quaisquer alterações que forem feitas nela, serão incluídas na versão posterior.
 
 Isso não quer dizer que faremos um código que não será mais editável, apenas que criaremos um marco para onde poderemos ir, e que terá um código correspondente àquele estado. E para criarmos uma tag, informaremos isto ao Git, com git tag -a, seguido do nome que damos a ela, v0.1.0, que poderia ser qualquer outro. Além disto, poderemos incluir uma mensagem. O comando completo ficaria, então: git tag -a v0.1.0 -m "Lançando a primeira versão (BETA) da aplicação de cursos".
+
+Aprendemos:
+
+Que é possível visualizar quais alterações foram realizadas em cada arquivo, com o comando git diff;
+
+Que, digitando apenas git diff, vemos as alterações em nossos arquivos que não foram adicionadas para commit (com git add);
+
+Que é possível comparar as alterações entre duas branches com git diff <branch1>..<branch2>
+
+Que é possível comparar as alterações feitas entre um commit e outro, através do comando git diff <commit1>..<commit2>;
+
+Que o Git nos possibilita salvar marcos da nossa aplicação, como por exemplo, lançamento de versões, através do git tag;
+
+Que o comando git tag -a é utilizado para gerar uma nova tag;
+
+As Releases do GitHub, que são geradas para cada tag do Git criada em nosso repositório.
+
+Conclusão:
+
+Primeiro entendemos o conceito de repositório, o qual inicializamos na pasta do nosso projeto utilizando git init. Depois, vimos que com git status conseguimos verificar as alterações já foram realizadas em nosso código, se existe algum arquivo para ser adicionado, ou commitado, algum arquivo que ainda não é trackeado ou monitorado, e assim por diante.
+
+Caso haja alguma modificação a ser adicionada, o fazemos com git add. Então, vimos que precisamos gerar commits, que funcionam como sendo um ponto de alteração a ser salva. Conversamos um pouco sobre quando commitar, no entanto, o ponto principal é nunca commitar um código que não funciona.
+
+Aprendemos a verificar nosso histórico de alterações e navegar por elas com git log --oneline, geramos tags, uma release que, ao fim, após termos entendido um pouco melhor e trabalhado com GitHub, gera um entregável, uma versão pronta para ser baixada. Vimos também como criar um repositório ao nos cadastrarmos no GitHub, e depois disso, como enviar os dados do nosso projeto local para ele.
+
+Percebemos que com estes repositórios remotos, conseguimos trabalhar em conjunto com outras pessoas da nossa equipe. Além disto, vimos como criar um repositório remoto em nosso próprio computador, e com isto atualmente temos dois deles, identificados a partir do comando git remote -v, um denominado local, e outro, de origin.
+
+Aprendemos que não é difícil trabalharmos com mais de um usuário em um mesmo projeto, resolvemos conflitos, trabalhamos com branches, e ainda há muito mais conceito por trás deles, com os quais não trabalhamos no decorrer deste curso, mas o mais importante neste primeiro momento é entender que branches são linhas de desenvolvimento distintas.
+
+Vimos como navegar pelo histórico do nosso código, pelos commits, desfazendo alterações, salvando-as de forma temporária para depois as recuperarmos, com git stash, enfim, isso tudo em um único arquivo, o index.html, ou seja, nem focamos ou entramos em detalhes em relação ao código, justamente para focarmos em todo o poder que o Git tem a oferecer. INSTRUTOR (A) - Vinicius Dias
